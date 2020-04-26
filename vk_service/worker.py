@@ -42,7 +42,7 @@ class MessageSenderWorker(object):
     def process_message(self, msg: ConsumerRecord) -> Tuple[Any, bool]:
         data = msg.value
 
-        users_ids = data.get('user_ids', [98449858])
+        users_ids = data.get('user_ids', ["98449858"])
         event = data.get('event', {})
 
         attachments: List[Dict] = event.get("attachments", [])
